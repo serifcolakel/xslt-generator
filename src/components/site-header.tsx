@@ -33,7 +33,7 @@ export function SiteHeader() {
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">
+              <BreadcrumbLink href="/dashboard">
                 Building Your Application
               </BreadcrumbLink>
             </BreadcrumbItem>

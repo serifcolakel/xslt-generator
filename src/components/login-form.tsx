@@ -74,6 +74,7 @@ export function LoginForm({
                     name="email"
                     placeholder="m@example.com"
                     required
+                    defaultValue={"admin@" + window.location.hostname + ".com"}
                   />
                 </div>
                 <div className="grid gap-2">
@@ -91,6 +92,8 @@ export function LoginForm({
                     type="password"
                     required
                     name="password"
+                    placeholder="Password"
+                    defaultValue="password"
                   />
                 </div>
                 <Button type="submit" className="w-full">

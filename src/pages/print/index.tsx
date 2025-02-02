@@ -26,6 +26,7 @@ function Page({
       ref={ref}
       className="relative h-[1154px] flex flex-col items-center mx-auto justify-between gap-y-4 bg-gradient-to-t from-primary to-secondary border-destructive min-w-[816px]"
     >
+      <h1 className="absolute top-4 right-2">Page {pageIndex}</h1>
       <Header />
       <main className="flex flex-col w-full h-full gap-y-4">{children}</main>
       <Footer />
@@ -54,7 +55,7 @@ const useHandleAction = () => {
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current!,
-    documentTitle: "Cari Ekstre",
+    documentTitle: "Print Example",
     onBeforePrint() {
       const triggerButton = document.getElementById(
         "print-button"
@@ -164,10 +165,9 @@ export default function PrintPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            src="https://via.placeholder.com/50"
+            src="/vite.svg"
             alt="Placeholder"
-            className="object-cover object-center w-20 h-20 rounded-md resize"
-            contentEditable
+            className="object-cover object-center w-20 h-20 rounded-md resize mx-auto"
             layout
           />
           <motion.h1
@@ -195,7 +195,7 @@ export default function PrintPage() {
             className="absolute top-0 left-0 flex p-2 w-fit gap-x-2 hover:bg-gray-500 hover:shadow-md hover:cursor-pointer group"
           >
             <Button id="print-button" onClick={handlePrint} variant="secondary">
-              Click me222
+              Click me
             </Button>
           </motion.div>
         </Page>

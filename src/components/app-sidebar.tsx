@@ -6,12 +6,12 @@ import {
   Bot,
   Command,
   Frame,
+  Layout,
   LifeBuoy,
   Map,
   PieChart,
   Send,
   Settings2,
-  SquareTerminal,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -27,6 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { paths } from "@/common";
 
 const data = {
   user: {
@@ -36,22 +37,18 @@ const data = {
   },
   navMain: [
     {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
+      title: "Dashboard",
+      url: paths.dashboard,
+      icon: Layout,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Invoice Preview",
+          url: paths.invoicePreview,
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Print Page",
+          url: paths.print,
         },
       ],
     },
