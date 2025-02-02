@@ -1,4 +1,5 @@
 export const paths = {
   home: "/",
-  print: "/print",
+  dashboard: "/dashboard",
+  print: "/dashboard/print",
 };

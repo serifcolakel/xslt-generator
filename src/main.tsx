@@ -9,7 +9,13 @@ import { TooltipProvider } from "./components/ui/tooltip";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <TooltipProvider>
-      <RouterProvider router={router} fallbackElement={<Loader />} />
+      <RouterProvider
+        future={{
+          v7_startTransition: true,
+        }}
+        router={router}
+        fallbackElement={<Loader />}
+      />
     </TooltipProvider>
   </StrictMode>
 );
