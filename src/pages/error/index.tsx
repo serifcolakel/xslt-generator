@@ -3,7 +3,7 @@ import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 
 function ErrorBoundary() {
   const error = useRouteError();
-  console.log(error);
+
   if (isRouteErrorResponse(error)) {
     return (
       <div>
@@ -12,7 +12,7 @@ function ErrorBoundary() {
         <p>{error.statusText}</p>
         {error.data?.message && <p>{error.data.message}</p>}
         <p>
-          Back to <Link to={paths.home}>home</Link>
+          Back to <Link to={paths.dashboard}>home</Link>
         </p>
       </div>
     );
@@ -25,7 +25,7 @@ function ErrorBoundary() {
       <h1>Oops!</h1>
       <p>
         Back to{" "}
-        <Link className="text-blue-500" to={paths.home}>
+        <Link className="text-blue-500" to={paths.dashboard}>
           home
         </Link>
       </p>

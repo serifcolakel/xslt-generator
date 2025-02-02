@@ -12,8 +12,8 @@ export const generateInvoiceHtml = async ({
 }) => {
   const response = await fetch(xsltPath);
   const data = await response.text();
-  console.log({ data });
+
   const transformedHtml = transformXml(data, xmlString, xmlMockParams);
-  console.log({ transformedHtml, xmlString });
+
   return transformedHtml;
 };
