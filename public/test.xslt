@@ -37,6 +37,7 @@
               <div class="invoice-page-number">
                 <span><xsl:value-of select="headerInfo/email" /></span>
                 <span><xsl:value-of select="headerInfo/address" /></span>
+                <h2>Page: <xsl:value-of select="position()"/></h2>
               </div>
             </header>
             

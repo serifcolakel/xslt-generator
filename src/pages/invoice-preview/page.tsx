@@ -7,7 +7,12 @@ import {
   generateInvoiceInfo,
   generateInvoiceList,
 } from "@/lib/mocks";
-import { listToXml, objectToXml, variableToXml } from "@/helpers/xml";
+import {
+  invoicePageToXml,
+  listToXml,
+  objectToXml,
+  variableToXml,
+} from "@/helpers/xml";
 import { getNow } from "@/helpers/date";
 import { useReactToPrint } from "react-to-print";
 import { Button } from "@/components/ui/button";
@@ -36,24 +41,23 @@ export default function InvoicePreviewPage() {
     const invoiceInfo = generateInvoiceInfo();
     const headerInfo = generateHeader();
     const now = getNow();
+    const len = Math.floor(Math.random() * 10);
     const xmlString = `
         <Invoices>
-            <Invoice>
-                ${variableToXml("createDate", now)}
-                ${objectToXml("companyInfo", companyInfo)}
-                ${objectToXml("clientInfo", clientInfo)}
-                ${objectToXml("headerInfo", headerInfo)}
-                ${objectToXml("invoiceInfo", invoiceInfo)}
-                ${listToXml("invoiceItems", "invoiceItem", list)}
-            </Invoice>
-            <Invoice>
-                ${variableToXml("createDate", now)}
-                ${objectToXml("companyInfo", companyInfo)}
-                ${objectToXml("clientInfo", clientInfo)}
-                ${objectToXml("headerInfo", headerInfo)}
-                ${objectToXml("invoiceInfo", invoiceInfo)}
-                ${listToXml("invoiceItems", "invoiceItem", list)}
-            </Invoice>
+          ${Array.from({ length: len > 1 ? len : 1 })
+            .map(() => {
+              return invoicePageToXml(
+                `
+                    ${variableToXml("createDate", now)}
+                    ${objectToXml("companyInfo", companyInfo)}
+                    ${objectToXml("clientInfo", clientInfo)}
+                    ${objectToXml("headerInfo", headerInfo)}
+                    ${objectToXml("invoiceInfo", invoiceInfo)}
+                    ${listToXml("invoiceItems", "invoiceItem", list)}
+                `
+              );
+            })
+            .join("")}
         </Invoices>
     `;
     const html = await generateInvoiceHtml({

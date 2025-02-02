@@ -79,3 +79,11 @@ export function objectToXml(tagName: string, obj: BaseXmlItem): string {
 export const variableToXml = (name: string, value: string) => {
   return `<${name}>${value}</${name}>`;
 };
+
+export const invoicePageToXml = (child: string) => {
+  return `
+    <Invoice>
+        ${child}
+    </Invoice>
+  `;
+};
