@@ -311,6 +311,7 @@ function ParentApp(): JSX.Element {
         }}
         onLoad={onIFrameLoad}
         ref={iframeRef}
+        sandbox="allow-forms allow-top-navigation allow-same-origin"
         src={childOrigin}
         className="h-[75vh] w-full block mx-auto border-none shadow-md p-4 rounded-md overflow-hidden items-center justify-center"
         title="Child App"
