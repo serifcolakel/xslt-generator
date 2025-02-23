@@ -5,11 +5,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 /**
  * Parent application component that listens for messages from the parent application.
  *
- * PROD: https://db-reporting-system.vercel.app/iframe-child
- *
  * LOCAL-TEST: http://localhost:5174/iframe-child
  */
-const childOrigin = "https://db-reporting-system.vercel.app/iframe-child";
+const childOrigin = "http://localhost:5174/iframe-child";
 
 function SendingIcon(): JSX.Element {
   return (
