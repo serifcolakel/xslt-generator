@@ -2,7 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const childOrigin = "http://localhost:3001";
+/**
+ *
+ */
+const childOrigin = "http://localhost:5174/iframe-child";
 
 function SendingIcon(): JSX.Element {
   return (
@@ -305,16 +308,7 @@ function ParentApp(): JSX.Element {
         onLoad={onIFrameLoad}
         ref={iframeRef}
         src={childOrigin}
-        style={{
-          height: "70vh",
-          width: "70%",
-          margin: "0 auto",
-          display: "block",
-          border: "none",
-          boxShadow: "0 0 1rem rgba(0, 0, 0, 0.1)",
-          padding: "1rem",
-          borderRadius: "0.5rem",
-        }}
+        className="h-[75vh] w-full block mx-auto border-none shadow-md p-4 rounded-md overflow-hidden items-center justify-center"
         title="Child App"
       />
     </div>
