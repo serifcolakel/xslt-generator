@@ -3,4 +3,5 @@ export const paths = {
   dashboard: "/",
   print: "/print",
   invoicePreview: "/invoice-preview",
+  iFrame: "/iframe",
 };
