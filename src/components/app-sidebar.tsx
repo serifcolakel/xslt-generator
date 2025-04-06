@@ -54,6 +54,10 @@ const data = {
           title: "IFrame",
           url: paths.iFrame,
         },
+        {
+          title: "Abort Request Example",
+          url: paths.abortRequest,
+        },
       ],
     },
     {

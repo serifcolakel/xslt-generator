@@ -30,6 +30,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "@uiw/react-md-editor": "^4.0.4",
     "@zodios/core": "^10.9.6",
+    "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.29",

@@ -1,4 +1,5 @@
 import { paths } from "@/common";
+import AbortRequestPage from "@/pages/abort-request";
 import DashboardPage from "@/pages/dashboard/page";
 import ErrorBoundary from "@/pages/error";
 import HomePage from "@/pages/home";
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: paths.iFrame,
         element: <ParentApp />,
+      },
+      {
+        path: paths.abortRequest,
+        element: <AbortRequestPage />,
       },
     ],
   },

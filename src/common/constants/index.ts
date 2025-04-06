@@ -4,4 +4,5 @@ export const paths = {
   print: "/print",
   invoicePreview: "/invoice-preview",
   iFrame: "/iframe",
+  abortRequest: "/abort-request",
 };
