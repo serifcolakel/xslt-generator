@@ -27,6 +27,9 @@ This article dives into various ways to handle cancellation of requests in React
 
 ## Links
 
+- [Full Code](https://github.com/serifcolakel/xslt-generator/tree/main/src/pages/abort-request)
+- [Live Example](http://xslt-generator-tvlk.vercel.app/abort-request)
+
 ## Canceling Requests with Axios
 
 Axios is a popular HTTP client for JavaScript, and it provides a built-in way to cancel requests using `CancelToken`. Here's how you can implement it:
